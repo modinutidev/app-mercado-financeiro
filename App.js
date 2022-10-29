@@ -16,12 +16,23 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarHideOnKeyboard: true,
+          tabBarActiveTintColor: '#464646',
+
+          tabBarStyle: {
+            backgroundColor: '#D9D9D9',
+            borderBottomWidth: 0,
+            paddingBottom: 4,
+            height: 50,
+          },
+        }}>
         <Tab.Screen
           name="Carteira"
           component={Carteira}
           options={{
-            headerShown: false,
             tabBarIcon: props =>
               icone('account-balance-wallet', props.size, props.color),
           }}
@@ -30,7 +41,6 @@ export default function App() {
           name="Investir"
           component={Mercado}
           options={{
-            headerShown: false,
             tabBarIcon: props =>
               icone('local-grocery-store', props.size, props.color),
           }}
@@ -39,7 +49,6 @@ export default function App() {
           name="Sobre"
           component={Sobre}
           options={{
-            headerShown: false,
             tabBarIcon: props => icone('account-box', props.size, props.color),
           }}
         />
