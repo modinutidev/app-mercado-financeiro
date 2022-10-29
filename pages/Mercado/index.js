@@ -12,7 +12,7 @@ export default function Mercado() {
         style={styles.input}
         placeholder="Digite o código do ativo..."
       />
-      <Text style={styles.tituloLista}>Ações:</Text>
+      <Text style={styles.tituloLista}>Ações para compra:</Text>
       {/* <Text>Ops! Nenhuma ação encontrada =/</Text> */}
       <Ativo />
       <Ativo />
