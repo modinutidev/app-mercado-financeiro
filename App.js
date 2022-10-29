@@ -21,6 +21,7 @@ export default function App() {
           name="Carteira"
           component={Carteira}
           options={{
+            headerShown: false,
             tabBarIcon: props =>
               icone('account-balance-wallet', props.size, props.color),
           }}
@@ -29,6 +30,7 @@ export default function App() {
           name="Investir"
           component={Mercado}
           options={{
+            headerShown: false,
             tabBarIcon: props =>
               icone('local-grocery-store', props.size, props.color),
           }}
@@ -37,6 +39,7 @@ export default function App() {
           name="Sobre"
           component={Sobre}
           options={{
+            headerShown: false,
             tabBarIcon: props => icone('account-box', props.size, props.color),
           }}
         />
