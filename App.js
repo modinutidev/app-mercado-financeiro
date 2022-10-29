@@ -13,6 +13,13 @@ function Sobre() {
 function Home() {
   return <Text>Teste</Text>;
 }
+function Loja() {
+  return <Text>Teste</Text>;
+}
+
+function icone(name, size, color) {
+  return <Icon name={name} size={size} color={color} />;
+}
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -20,8 +27,29 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Teste" component={Sobre} />
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen
+          name="Carteira"
+          component={Sobre}
+          options={{
+            tabBarIcon: props =>
+              icone('account-balance-wallet', props.size, props.color),
+          }}
+        />
+        <Tab.Screen
+          name="Mercado"
+          component={Loja}
+          options={{
+            tabBarIcon: props =>
+              icone('local-grocery-store', props.size, props.color),
+          }}
+        />
+        <Tab.Screen
+          name="Sobre"
+          component={Home}
+          options={{
+            tabBarIcon: props => icone('account-box', props.size, props.color),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
