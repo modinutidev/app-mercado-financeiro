@@ -16,9 +16,9 @@ export const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: '#E4E4E4',
-    borderColor: '#D1D1D1',
-    borderWidth: 0.5,
+    backgroundColor: '#A01DAB',
+    borderColor: '#A01DAB',
+    borderWidth: 0.1,
   },
   nome: {
     fontSize: 26,
