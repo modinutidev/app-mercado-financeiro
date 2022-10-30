@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   containerSocial: {
-    width: 200,
+    width: 180,
     height: 130,
     justifyContent: 'center',
     justifyContent: 'space-between',
@@ -19,22 +19,28 @@ export const styles = StyleSheet.create({
     backgroundColor: '#A01DAB',
     borderColor: '#A01DAB',
     borderWidth: 0.1,
+    marginBottom: 10,
   },
   nome: {
     fontSize: 26,
     fontWeight: 'bold',
-    marginVertical: 10,
+    marginBottom: 10,
   },
   btnSocial: {
-    width: 200,
     height: 40,
     backgroundColor: '#A01DAB',
     borderRadius: 6,
+    flexDirection: 'row',
+    alignContent: 'center',
+    justifyContent: 'center',
   },
   txtButton: {
-    flex: 1,
     color: 'white',
-    textAlign: 'center',
+    fontWeight: 'bold',
     textAlignVertical: 'center',
+  },
+  iconButton: {
+    textAlignVertical: 'center',
+    marginRight: 6,
   },
 });
