@@ -41,6 +41,6 @@ export const styles = StyleSheet.create({
   },
   iconButton: {
     textAlignVertical: 'center',
-    marginRight: 6,
+    marginRight: 4,
   },
 });

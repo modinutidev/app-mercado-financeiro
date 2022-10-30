@@ -21,7 +21,7 @@ export default function Sobre() {
           <Icon
             style={styles.iconButton}
             name="linkedin-square"
-            size={20}
+            size={18}
             color="white"
           />
           <Text style={styles.txtButton}>LinkedIn</Text>
@@ -33,7 +33,7 @@ export default function Sobre() {
           <Icon
             style={styles.iconButton}
             name="github"
-            size={20}
+            size={18}
             color="white"
           />
           <Text style={styles.txtButton}>GitHub</Text>
@@ -47,7 +47,7 @@ export default function Sobre() {
           <Icon
             style={styles.iconButton}
             name="instagram"
-            size={20}
+            size={18}
             color="white"
           />
           <Text style={styles.txtButton}>Instagram</Text>
