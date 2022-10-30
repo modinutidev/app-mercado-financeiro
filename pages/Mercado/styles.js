@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   input: {
+    flex: 1,
     height: 40,
     borderRadius: 6,
     backgroundColor: '#E4E4E4',
@@ -16,7 +17,25 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     paddingHorizontal: 10,
     fontWeight: '500',
-    marginVertical: 10,
+    marginRight: 10,
+  },
+  btnBuscar: {
+    height: 40,
+    width: 100,
+    backgroundColor: '#A01DAB',
+    borderRadius: 6,
+    flexDirection: 'row',
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  txtButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlignVertical: 'center',
+  },
+  iconButton: {
+    textAlignVertical: 'center',
+    marginRight: 4,
   },
   tituloLista: {
     fontSize: 16,
