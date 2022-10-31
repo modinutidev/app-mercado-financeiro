@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
   },
   texto: {
-    color: 'black',
+    color: '#5b5b5b',
     fontWeight: 'bold',
   },
   input: {
@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
     marginRight: 10,
     textTransform: 'uppercase',
+    color: '#5b5b5b',
   },
   button: {
     height: 40,

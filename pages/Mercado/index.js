@@ -19,6 +19,7 @@ export default function Mercado() {
         <TextInput
           style={styles.input}
           placeholder="Digite o código do ativo..."
+          placeholderTextColor={'#5b5b5b'}
           value={this.codigo}
           onChangeText={text => {
             setCodigo(text);
@@ -47,7 +48,7 @@ export default function Mercado() {
       ) : (
         <View>
           <Text>{ativo}</Text>
-          {/* <Detalhes></Detalhes> */}
+          <Detalhes></Detalhes>
         </View>
       )}
 

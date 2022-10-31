@@ -18,9 +18,11 @@ export const styles = StyleSheet.create({
   labelValor: {
     fontSize: 11,
     fontWeight: 'bold',
+    color: '#5b5b5b',
   },
   valor: {
     fontSize: 14,
     fontWeight: '500',
+    color: '#5b5b5b',
   },
 });

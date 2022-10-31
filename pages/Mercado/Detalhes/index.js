@@ -23,15 +23,25 @@ export default function Detalhes() {
       <View style={styles.containerCompra}>
         <View style={{flex: 1}}>
           <Text style={styles.texto}>Valor:</Text>
-          <TextInput style={styles.input} />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor={'#5b5b5b'}
+            value={1}
+            keyboardType={'numeric'}
+          />
         </View>
         <View style={{flex: 1}}>
           <Text style={styles.texto}>Quantidade:</Text>
-          <TextInput style={styles.input} />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor={'#5b5b5b'}
+            value={1}
+            keyboardType={'numeric'}
+          />
         </View>
         <TouchableOpacity style={styles.button}>
           <Icon
-            style={styles.textButton}
+            style={styles.iconButton}
             name="money"
             size={14}
             color="white"

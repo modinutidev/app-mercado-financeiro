@@ -10,7 +10,7 @@ export default function Sobre() {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.imgPerfil} source={Bruno} />
-      <Text>Desenvolvido por:</Text>
+      <Text style={{color: '#5b5b5b'}}>Desenvolvido por:</Text>
       <Text style={styles.nome}>Bruno Modinuti</Text>
       <View style={styles.containerSocial}>
         <TouchableOpacity

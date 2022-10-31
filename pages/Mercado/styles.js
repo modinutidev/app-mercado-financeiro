@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   tituloPagina: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#5b5b5b',
   },
   input: {
     flex: 1,
@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
     marginRight: 10,
     textTransform: 'uppercase',
+    color: '#5b5b5b',
   },
   btnBuscar: {
     height: 40,
@@ -42,6 +43,6 @@ export const styles = StyleSheet.create({
   tituloLista: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#5b5b5b',
   },
 });

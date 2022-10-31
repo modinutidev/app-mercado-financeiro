@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
   tituloLista: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#5b5b5b',
   },
   containerResumo: {
     flexDirection: 'row',

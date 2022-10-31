@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#5b5b5b',
   },
   btnSocial: {
     height: 40,
