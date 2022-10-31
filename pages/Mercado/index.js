@@ -1,11 +1,16 @@
-import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import React, {useRef, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
-import Ativo from '../../components/Ativo';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Detalhes from './Detalhes';
+import {buscarAtivo} from './services';
 
 export default function Mercado() {
+  let [codigo, setCodigo] = useState('');
+  let refCodigo = useRef('');
+  let [ativo, setAtivo] = useState('');
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.tituloPagina}>Mercado</Text>
@@ -14,8 +19,17 @@ export default function Mercado() {
         <TextInput
           style={styles.input}
           placeholder="Digite o código do ativo..."
+          value={this.codigo}
+          onChangeText={text => {
+            setCodigo(text);
+          }}
+          useRef={refCodigo}
+          maxLength={8}
         />
-        <TouchableOpacity style={styles.btnBuscar}>
+
+        <TouchableOpacity
+          style={styles.btnBuscar}
+          onPress={() => buscarAtivo(codigo)}>
           <Icon
             style={styles.iconButton}
             name="search"
@@ -26,17 +40,18 @@ export default function Mercado() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.tituloLista}>Ações para compra:</Text>
+      {codigo.length <= 0 ? (
+        <View>
+          <Text style={styles.tituloLista}>Ações favoritas:</Text>
+        </View>
+      ) : (
+        <View>
+          <Text>{ativo}</Text>
+          {/* <Detalhes></Detalhes> */}
+        </View>
+      )}
+
       {/* <Text>Ops! Nenhuma ação encontrada =/</Text> */}
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
-      <Ativo />
     </SafeAreaView>
   );
 }
