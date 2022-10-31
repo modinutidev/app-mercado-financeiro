@@ -28,6 +28,8 @@ export const styles = StyleSheet.create({
     marginRight: 10,
     textTransform: 'uppercase',
     color: '#5b5b5b',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   button: {
     height: 40,

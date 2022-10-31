@@ -7,9 +7,9 @@ import Detalhes from './Detalhes';
 import {buscarAtivo} from './services';
 
 export default function Mercado() {
-  let [codigo, setCodigo] = useState('');
-  let refCodigo = useRef('');
-  let [resultadoBusca, setResultadoBusca] = useState('');
+  const [codigo, setCodigo] = useState('');
+  const [resultadoBusca, setResultadoBusca] = useState('');
+  const [detalhesAtivo, setDetalhesAtivo] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,8 +23,8 @@ export default function Mercado() {
           value={this.codigo}
           onChangeText={text => {
             setCodigo(text);
+            setDetalhesAtivo(false);
           }}
-          useRef={refCodigo}
           maxLength={8}
         />
 
@@ -33,6 +33,7 @@ export default function Mercado() {
           onPress={async () => {
             const res = await buscarAtivo(codigo);
             setResultadoBusca(res);
+            setDetalhesAtivo(true);
             console.log(resultadoBusca);
           }}>
           <Icon
@@ -45,17 +46,17 @@ export default function Mercado() {
         </TouchableOpacity>
       </View>
 
-      {!resultadoBusca ? (
-        <View>
-          <Text style={styles.tituloLista}>Ações favoritas:</Text>
-        </View>
-      ) : (
-        <View>
+      {detalhesAtivo ? (
+        resultadoBusca ? (
           <Detalhes detalhes={resultadoBusca}></Detalhes>
-        </View>
+        ) : (
+          <Text style={{color: 'red'}}>
+            Ativo não encontrado, verifique o código digitado =/
+          </Text>
+        )
+      ) : (
+        <Text style={styles.tituloLista}>Ações favoritas:</Text>
       )}
-
-      {/* <Text>Ops! Nenhuma ação encontrada =/</Text> */}
     </SafeAreaView>
   );
 }

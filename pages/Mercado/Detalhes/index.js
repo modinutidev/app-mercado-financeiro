@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from './styles';
 
 export default function Detalhes(props) {
-  //
   const detalhes = props.detalhes;
   const codigo = detalhes.symbol;
   const nome = detalhes.longName;
