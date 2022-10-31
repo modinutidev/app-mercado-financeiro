@@ -1,13 +1,14 @@
 const api = 'https://brapi.dev/api/';
 
-async function buscarAtivo(ativo) {
-  const response = await fetch(`${api}quote/${ativo}`)
+function buscarAtivo(ativo) {
+  return fetch(`${api}quote/${ativo}`)
     .then(response => response.json())
     .then(json => {
-      return json;
+      return json.results[0];
+    })
+    .catch(() => {
+      return false;
     });
-
-  console.log(response);
 }
 
 export {buscarAtivo};

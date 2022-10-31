@@ -9,7 +9,7 @@ import {buscarAtivo} from './services';
 export default function Mercado() {
   let [codigo, setCodigo] = useState('');
   let refCodigo = useRef('');
-  let [ativo, setAtivo] = useState('');
+  let [resultadoBusca, setResultadoBusca] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,7 +30,11 @@ export default function Mercado() {
 
         <TouchableOpacity
           style={styles.btnBuscar}
-          onPress={() => buscarAtivo(codigo)}>
+          onPress={async () => {
+            const res = await buscarAtivo(codigo);
+            setResultadoBusca(res);
+            console.log(resultadoBusca);
+          }}>
           <Icon
             style={styles.iconButton}
             name="search"
@@ -41,14 +45,13 @@ export default function Mercado() {
         </TouchableOpacity>
       </View>
 
-      {codigo.length <= 0 ? (
+      {!resultadoBusca ? (
         <View>
           <Text style={styles.tituloLista}>Ações favoritas:</Text>
         </View>
       ) : (
         <View>
-          <Text>{ativo}</Text>
-          <Detalhes></Detalhes>
+          <Detalhes detalhes={resultadoBusca}></Detalhes>
         </View>
       )}
 
