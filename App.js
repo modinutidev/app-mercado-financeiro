@@ -3,9 +3,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Carteira from './pages/Carteira';
-import Mercado from './pages/Mercado';
-import Sobre from './pages/Sobre';
+import Carteira from './src/pages/Carteira';
+import Mercado from './src/pages/Mercado';
+import Sobre from './src/pages/Sobre';
 
 function icone(name, size, color) {
   return <Icon name={name} size={size} color={color} />;
