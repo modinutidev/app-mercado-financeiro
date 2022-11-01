@@ -1,10 +1,10 @@
-import React, {useRef, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, {useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
-import {styles} from './styles';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Detalhes from './Detalhes';
+import {styles} from './styles';
 import {buscarAtivo} from './services';
+import Detalhes from './Detalhes';
 
 export default function Mercado() {
   const [codigo, setCodigo] = useState('');
@@ -34,7 +34,6 @@ export default function Mercado() {
             const res = await buscarAtivo(codigo);
             setResultadoBusca(res);
             setDetalhesAtivo(true);
-            console.log(resultadoBusca);
           }}>
           <Icon
             style={styles.iconButton}
