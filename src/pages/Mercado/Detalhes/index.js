@@ -23,7 +23,8 @@ export default function Detalhes(props) {
           Valor abertura: R$ {abertura.toFixed(2)}
         </Text>
         <Text style={[styles.texto, {fontSize: 14}]}>
-          Variação do dia: {variacao.toFixed(2)}%
+          Variação do dia:{' '}
+          {variacao > 0 ? `+${variacao.toFixed(2)}` : variacao.toFixed(2)}%
         </Text>
         <Text style={[styles.texto, {fontSize: 14}]}>
           Valor atual: R$ {preco.toFixed(2)}
