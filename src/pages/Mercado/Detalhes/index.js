@@ -4,12 +4,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from './styles';
 
 export default function Detalhes(props) {
-  const detalhes = props.detalhes;
-  const codigo = detalhes.symbol;
-  const nome = detalhes.longName;
-  const abertura = detalhes.regularMarketOpen;
-  const variacao = detalhes.regularMarketChangePercent;
-  const preco = detalhes.regularMarketPrice;
+  const {
+    symbol: codigo,
+    longName: nome,
+    regularMarketPreviousClose: fechamentoAnterior,
+    regularMarketPrice: preco,
+    regularMarketChangePercent: variacaoDia,
+  } = props.detalhes;
 
   const [valorCompra, setValorCompra] = useState(`${preco.toFixed(2)}`);
   const [qtCompra, setQtCompra] = useState(`1`);
@@ -20,11 +21,14 @@ export default function Detalhes(props) {
         <Text style={[styles.texto, {fontSize: 16}]}>{codigo}</Text>
         <Text style={[styles.texto, {fontSize: 24}]}>{nome}</Text>
         <Text style={[styles.texto, {fontSize: 14}]}>
-          Valor abertura: R$ {abertura.toFixed(2)}
+          Fech. anterior: R$ {fechamentoAnterior.toFixed(2)}
         </Text>
         <Text style={[styles.texto, {fontSize: 14}]}>
           Variação do dia:{' '}
-          {variacao > 0 ? `+${variacao.toFixed(2)}` : variacao.toFixed(2)}%
+          {variacaoDia > 0
+            ? `+${variacaoDia.toFixed(2)}`
+            : variacaoDia.toFixed(2)}
+          %
         </Text>
         <Text style={[styles.texto, {fontSize: 14}]}>
           Valor atual: R$ {preco.toFixed(2)}
