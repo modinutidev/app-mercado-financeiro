@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from './styles';
+import {comprarAtivo} from './services';
 
 export default function Detalhes(props) {
   const {
@@ -11,9 +12,12 @@ export default function Detalhes(props) {
     regularMarketPrice: preco,
     regularMarketChangePercent: variacaoDia,
   } = props.detalhes;
-
   const [valorCompra, setValorCompra] = useState(`${preco.toFixed(2)}`);
   const [qtCompra, setQtCompra] = useState(`1`);
+
+  function salvar() {
+    comprarAtivo({codigo, quantidade: qtCompra, valor: valorCompra});
+  }
 
   return (
     <View style={styles.container}>
@@ -56,7 +60,7 @@ export default function Detalhes(props) {
             keyboardType={'numeric'}
           />
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={salvar}>
           <Icon
             style={styles.iconButton}
             name="money"
