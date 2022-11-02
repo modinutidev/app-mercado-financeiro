@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -7,12 +7,18 @@ import Carteira from './src/pages/Carteira';
 import Mercado from './src/pages/Mercado';
 import Sobre from './src/pages/Sobre';
 
+import db from './src/database/DataSource';
+
 function icone(name, size, color) {
   return <Icon name={name} size={size} color={color} />;
 }
 
 export default function App() {
   const Tab = createBottomTabNavigator();
+
+  useEffect(() => {
+    db;
+  }, []);
 
   return (
     <NavigationContainer>
