@@ -10,7 +10,10 @@ const Ativos = new EntitySchema({
       generated: true,
     },
     codigo: {
-      type: 'int',
+      type: 'varchar',
+    },
+    nome: {
+      type: 'varchar',
     },
     valor: {
       type: 'decimal',
