@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontWeight: '500',
     marginRight: 10,
-    textTransform: 'uppercase',
     color: '#5b5b5b',
   },
   btnBuscar: {

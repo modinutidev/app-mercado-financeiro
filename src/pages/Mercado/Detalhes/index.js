@@ -1,10 +1,12 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from './styles';
-import {comprarAtivo} from './services';
+import {db} from '../../../database/DataSource';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Detalhes(props) {
+  const navigation = useNavigation();
   const {
     symbol: codigo,
     longName: nome,
@@ -14,10 +16,6 @@ export default function Detalhes(props) {
   } = props.detalhes;
   const [valorCompra, setValorCompra] = useState(`${preco.toFixed(2)}`);
   const [qtCompra, setQtCompra] = useState(`1`);
-
-  function salvar() {
-    comprarAtivo({codigo, quantidade: qtCompra, valor: valorCompra});
-  }
 
   return (
     <View style={styles.container}>
@@ -77,4 +75,13 @@ export default function Detalhes(props) {
       </TouchableOpacity>
     </View>
   );
+
+  async function salvar() {
+    const conn = await db;
+    await conn
+      .getRepository('Ativos')
+      .save({codigo, nome, quantidade: qtCompra, valor: valorCompra});
+    props.resetInputs();
+    navigation.navigate('Carteira', {atualiza: true});
+  }
 }
